@@ -39,7 +39,7 @@ function animatedSlides() {
     let nextSlide = slides.length - 1 === index ? "end" : slides[index + 1];
     pageTl.fromTo(nextSlide, { y: "0%" }, { y: "50" });
     pageTl.fromTo(slide, { opacity: 1, scale: 1 }, { opacity: 0, scale: 0 });
-    pageTl.fromTo(nextSlide, { y: "50%" }, { y: "0" }, "-=0.2");
+    pageTl.fromTo(nextSlide, { y: "50%" }, { y: "0%" }, "-=0.5");
     //Create new scene
     pageScene = new ScrollMagic.Scene({
       triggerElement: slide,
@@ -58,8 +58,9 @@ function animatedSlides() {
   });
 }
 
-let mouse = document.querySelector(".cursor");
-let mouseTxt = mouse.querySelector("span");
+const mouse = document.querySelector(".cursor");
+const mouseTxt = mouse.querySelector("span");
+const burger = document.querySelector(".burger");
 
 function cursor(e) {
   mouse.style.top = e.pageY + "px";
@@ -84,6 +85,25 @@ function activeCursor(e) {
   }
 }
 
+function navToggle(e) {
+  if (!e.target.classList.contains("active")) {
+    e.target.classList.add("active");
+    gsap.to(".line1", 0.5, { rotate: "45", y: 5, background: "#000" });
+    gsap.to(".line2", 0.5, { rotate: "-45", y: -5, background: "#000" });
+    gsap.to("#logo", 1, { color: "#000" });
+    gsap.to(".nav-bar", 1, { clipPath: "circle(2500px at 100% -10%)" });
+    document.body.classList.add("hide");
+  } else {
+    e.target.classList.remove("active");
+    gsap.to(".line1", 0.8, { rotate: "0", y: 0, background: "#fff" });
+    gsap.to(".line2", 0.8, { rotate: "0", y: 0, background: "#fff" });
+    gsap.to("#logo", 1, { color: "#fff" });
+    gsap.to(".nav-bar", 1, { clipPath: "circle(50px at 100% -10%)" });
+    document.body.classList.remove("hide");
+  }
+}
+//EventListners
+burger.addEventListener("click", navToggle);
 window.addEventListener("mousemove", cursor);
 window.addEventListener("mouseover", activeCursor);
 
