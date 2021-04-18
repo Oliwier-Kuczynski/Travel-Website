@@ -165,16 +165,16 @@ main {
   pointer-events: none;
   transition: all 0.5s ease-in-out;
   transition-property: background, transform;
-  transform-origin: 75% 75%;
+  transform-origin: 150% 150%;
   z-index: 1;
 }
 .cursor.nav-active {
   background: rgba(86, 124, 228, 0.7);
-  transform: scale(3);
+  transform: scale(1.5);
 }
 .cursor.explore-active {
   background: white;
-  transform: scale(3);
+  transform: scale(1.5);
 }
 .cursor-text {
   position: absolute;
