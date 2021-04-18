@@ -92,6 +92,7 @@ function navToggle(e) {
     gsap.to(".line2", 0.5, { rotate: "-45", y: -5, background: "#000" });
     gsap.to("#logo", 1, { color: "#000" });
     gsap.to(".nav-bar", 1, { clipPath: "circle(2500px at 100% -10%)" });
+    gsap.to(mouse, 0.4, { borderColor: "#000" });
     document.body.classList.add("hide");
   } else {
     e.target.classList.remove("active");
@@ -99,6 +100,7 @@ function navToggle(e) {
     gsap.to(".line2", 0.8, { rotate: "0", y: 0, background: "#fff" });
     gsap.to("#logo", 1, { color: "#fff" });
     gsap.to(".nav-bar", 1, { clipPath: "circle(50px at 100% -10%)" });
+    gsap.to(mouse, 0.4, { borderColor: "#fff" });
     document.body.classList.remove("hide");
   }
 }

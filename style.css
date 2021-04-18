@@ -2,6 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none;
+}
+
+a:hover {
+  cursor: none;
 }
 
 body {
@@ -10,6 +15,7 @@ body {
   overflow-x: hidden;
   position: relative;
 }
+
 main {
   position: absolute;
 }
@@ -119,9 +125,7 @@ main {
   clip-path: circle(50px at 100% -10%);
   -webkit-clip-path: circle(50px at 100% -10%);
 }
-.burger {
-  cursor: pointer;
-}
+
 .nav-links {
   font-size: 3rem;
   flex-basis: 30rem;
@@ -162,9 +166,10 @@ main {
   transition: all 0.5s ease-in-out;
   transition-property: background, transform;
   transform-origin: 75% 75%;
+  z-index: 1;
 }
 .cursor.nav-active {
-  background: rgb(86, 124, 228);
+  background: rgba(86, 124, 228, 0.7);
   transform: scale(3);
 }
 .cursor.explore-active {
