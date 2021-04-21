@@ -133,6 +133,33 @@ main {
 .nav-links h3 {
   padding: 3rem 0rem;
 }
+
+.nav-links .tw:hover {
+  color: #1da1f2;
+}
+
+.nav-links .yt:hover {
+  color: #ff0000;
+}
+
+.nav-links .in:hover {
+  background-image: radial-gradient(
+    circle,
+    rgba(253, 29, 29, 0.712),
+    rgb(225, 48, 108),
+    rgb(193, 53, 132),
+    rgb(245, 96, 64),
+    rgb(247, 119, 55),
+    rgb(252, 175, 69),
+    rgb(255, 220, 128),
+    rgb(64, 92, 230),
+    rgb(88, 81, 216)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 .contact {
   flex-basis: 30rem;
 }
