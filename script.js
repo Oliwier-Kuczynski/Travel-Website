@@ -24,15 +24,10 @@ function animatedSlides() {
     //Create Scene
     slideScene = new ScrollMagic.Scene({
       triggerElement: slide,
-      triggerHook: 0.25,
+      triggerHook: 0.4,
       reverse: false,
     })
       .setTween(slideTl)
-      .addIndicators({
-        colorStart: "#fff",
-        colorTrigger: "#fff",
-        name: "slide",
-      })
       .addTo(controller);
     //New animation
     const pageTl = gsap.timeline();
@@ -46,12 +41,6 @@ function animatedSlides() {
       duration: "100%",
       triggerHook: 0,
     })
-      .addIndicators({
-        colorStart: "#fff",
-        colorTrigger: "#fff",
-        name: "page",
-        indent: 200,
-      })
       .setPin(slide, { pushFollowers: false })
       .setTween(pageTl)
       .addTo(controller);
@@ -143,7 +132,7 @@ barba.init({
         tl.fromTo(current.container, 1, { opacity: 1 }, { opacity: 0 });
         tl.fromTo(
           ".swipe",
-          0.75,
+          0.65,
           { x: "-100%" },
           { x: "0%", onComplete: done },
           "-=0.5"
